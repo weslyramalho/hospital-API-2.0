@@ -9,8 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.teste.teste.entities.Funcionario;
+import com.teste.teste.entities.Historico;
 import com.teste.teste.entities.Paciente;
 import com.teste.teste.repositories.FuncionarioRepository;
+import com.teste.teste.repositories.HistoricoRepository;
 import com.teste.teste.repositories.PacienteRepository;
 
 @Configuration
@@ -22,6 +24,9 @@ public class TestConfig implements CommandLineRunner{
 	
 	@Autowired 
 	private PacienteRepository pacienteRepository;
+	
+	@Autowired
+	private HistoricoRepository historicoRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -40,7 +45,14 @@ public class TestConfig implements CommandLineRunner{
 		Paciente p5 = new Paciente(null, "Bela", Instant.parse("2015-05-22T15:21:22Z"), "45678925454"); 
 		
 		pacienteRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
-
+		
+		Historico h1 = new Historico(null, Instant.parse("2015-05-22T15:21:22Z"), Instant.parse("2015-05-22T15:21:22Z"), "Parada cardiaca", p1, f1);
+		Historico h2 = new Historico(null, Instant.parse("2015-05-22T15:21:22Z"), Instant.parse("2015-05-22T15:21:22Z"), "Parada cardiaca", p2, f5);
+		Historico h3 = new Historico(null, Instant.parse("2015-05-22T15:21:22Z"), Instant.parse("2015-05-22T15:21:22Z"), "Parada cardiaca", p3, f4);
+		Historico h4 = new Historico(null, Instant.parse("2015-05-22T15:21:22Z"), Instant.parse("2015-05-22T15:21:22Z"), "Parada cardiaca", p5, f2);
+		Historico h5 = new Historico(null, Instant.parse("2015-05-22T15:21:22Z"), Instant.parse("2015-05-22T15:21:22Z"), "Parada cardiaca", p4, f1);
+		
+		historicoRepository.saveAll(Arrays.asList(h1, h2, h3, h4, h5));
 	
 	}
 
