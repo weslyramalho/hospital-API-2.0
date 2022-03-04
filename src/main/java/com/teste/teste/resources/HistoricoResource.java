@@ -2,6 +2,7 @@ package com.teste.teste.resources;
 
 import java.time.Instant;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,11 @@ import com.teste.teste.entities.Paciente;
 @RequestMapping(value = "/historico")
 public class HistoricoResource {
 	
+	@Autowired
+	public Histo
 	@GetMapping
 	public ResponseEntity<Historico> findAll(){
-		Historico h1 = new Historico(null, Instant.parse("2019-06-20T19:53:07Z"), Instant.parse("2019-07-20T19:53:07Z"), "infecção instetinal", , 1L); 
-		return ResponseEntity.ok().body(h1);
+		return ResponseEntity.ok().body();
 	}
 
 }
