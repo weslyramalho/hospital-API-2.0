@@ -6,6 +6,6 @@ import com.teste.teste.entities.Funcionario;
 import com.teste.teste.entities.Historico;
 import com.teste.teste.entities.Paciente;
 
-public interface PacienteRepository extends JpaRepository<Historico, Long>{
+public interface PacienteRepository extends JpaRepository<Paciente, Long>{
 
 }

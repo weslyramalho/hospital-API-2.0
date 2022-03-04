@@ -22,8 +22,8 @@ public class HistoricoResource {
 	public HistoricoService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Paciente>> findAll(){
-		List<Paciente> list= service.findAll();
+	public ResponseEntity<List<Historico>> findAll(){
+		List<Historico> list= service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
