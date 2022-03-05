@@ -3,36 +3,35 @@ package com.teste.teste.entities;
 import java.util.List;
 
 public class MedicosPorDepartamento {
-	private Integer quantidade;
+	private Funcionario funcionario;
 	
-	private List<Funcionario> funcionario;
+	private List<Historico> historicos;
 
 	public MedicosPorDepartamento() {
 	}
 
-	public MedicosPorDepartamento(Integer quantidade, List<Funcionario> funcionario) {
-		this.quantidade = quantidade;
+	public MedicosPorDepartamento(Funcionario funcionario, List<Historico> historicos) {
 		this.funcionario = funcionario;
+		this.historicos = historicos;
 	}
 
-	public Integer getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public List<Funcionario> getFuncionario() {
+	public Funcionario getFuncionario() {
 		return funcionario;
 	}
 
-	public void setFuncionario(List<Funcionario> funcionario) {
+	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+
+	public List<Historico> getHistoricos() {
+		return historicos;
+	}
+
+	public void setHistoricos(List<Historico> historicos) {
+		this.historicos = historicos;
 	}
 	
 	
 
 	
-
 }
