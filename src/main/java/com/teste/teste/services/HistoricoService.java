@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.teste.teste.entities.Historico;
 import com.teste.teste.entities.Historico;
+import com.teste.teste.entities.Historico;
 import com.teste.teste.repositories.HistoricoRepository;
 
 @Service
@@ -24,5 +25,19 @@ public class HistoricoService {
 		Optional<Historico> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Historico insert(Historico obj) {
+		return repository.save(obj);
+	}
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
+	public Historico update(Long id, Historico obj) {
+		Historico entity = repository.getById(id);
+		return repository.save(entity);
+		
+	}
+
 
 }
