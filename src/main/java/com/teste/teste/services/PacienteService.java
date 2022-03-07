@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teste.teste.entities.Paciente;
-import com.teste.teste.entities.Paciente;
-import com.teste.teste.entities.Paciente;
+
 import com.teste.teste.repositories.PacienteRepository;
 
 @Service
