@@ -23,5 +23,18 @@ public class FuncionarioService {
 		Optional<Funcionario> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Funcionario insert(Funcionario obj) {
+		return repository.save(obj);
+	}
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
+	public Funcionario update(Long id, Funcionario obj) {
+		Funcionario entity = repository.getById(id);
+		return repository.save(entity);
+		
+	}
 
 }
