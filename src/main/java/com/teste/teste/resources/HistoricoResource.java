@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.teste.teste.adapters.HistoricoAdapters;
+import com.teste.teste.entities.Funcionario;
 import com.teste.teste.entities.Historico;
 import com.teste.teste.entities.HospitalizacaoPorPaciente;
+import com.teste.teste.entities.MedicosPorDepartamento;
 import com.teste.teste.entities.Historico;
 import com.teste.teste.entities.Paciente;
 import com.teste.teste.services.FuncionarioService;
@@ -83,6 +85,17 @@ public class HistoricoResource {
 				.adHospitalizacaoPorPaciente(historicos, pacientes);
 		
 		return new ResponseEntity<>(hospitalizacaoPorPacientes, HttpStatus.OK);
+	}
+	
+	@GetMapping("/funcionarios")
+	public ResponseEntity<List<MedicosPorDepartamento>> medicosPorDepartamento(){
+		List<Funcionario> funcionarios = funcionario.findAll();
+		List<Historico> historicos = service.findAll();
+		
+		List<MedicosPorDepartamento> medicosPorDepartamentos = historicoAdapters
+				.adMedicosPorDepartamento(historicos, funcionarios);
+		
+		return new ResponseEntity<>(medicosPorDepartamentos, HttpStatus.OK);
 	}
 
 
